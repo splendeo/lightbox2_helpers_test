@@ -1,0 +1,16 @@
+<% form_for @picture do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :gallery_id %><br />
+    <%= f.collection_select :gallery_id, @galleries, :id, :name, :include_blank => true %><br />
+  </p>
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_field :caption %>
+  </p>
+  <p>
+    <%= f.label :filename %><br />
+    <%= f.text_field :filename %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>

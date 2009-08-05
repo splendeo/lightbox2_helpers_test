@@ -1,0 +1,31 @@
+<% title "Galleries" %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Thumbnails</th>
+  </tr>
+  <% for gallery in @galleries %>
+    <tr>
+      <td><%=h gallery.name %></td>
+      <td>
+        <table>
+        <tr>
+            <% gallery.pictures.each do |picture| %>
+              <td>
+                <% link_to_lightbox2 "images/#{picture.filename}", :group => gallery.name, :title => picture.caption do %>
+                  <%=image_tag "thumbs/#{picture.filename}" %>
+                <% end %>
+              </td>
+            <% end %>
+        </tr>
+        </table>
+      </td>
+      <td><%= link_to "Show", gallery %></td>
+      <td><%= link_to "Edit", edit_gallery_path(gallery) %></td>
+      <td><%= link_to "Destroy", gallery, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Gallery", new_gallery_path %></p>

@@ -1,0 +1,25 @@
+
+
+=lightbox2_helpers_test
+
+This is a sample application of lightbox2_helpers.
+
+The library can be found in http://github.com/splendeo/lightbox2_helpers
+
+==Installation
+
+* Clone the test app repository
+    git clone git://github.com/splendeo/lightbox2_helpers_test.git
+
+* Set up the database connection data by copying and possibly modifying config/database.yml
+    cp config/database.yml.example config/database.yml
+
+* Install gems
+    rake gems:install
+
+* Start server and point your browser to localhost:3000
+    ./script/server
+    firefox http://localhost:3000
+
+The interesting stuff is on "View galleries". The rest is just scaffolding stuff.
+    

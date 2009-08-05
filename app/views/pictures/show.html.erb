@@ -1,0 +1,20 @@
+<% title "Picture" %>
+
+<p>
+  <strong>Gallery:</strong>
+  <%=h @picture.gallery_id %>
+</p>
+<p>
+  <strong>Caption:</strong>
+  <%=h @picture.caption %>
+</p>
+<p>
+  <strong>Filename:</strong>
+  <%=h @picture.filename %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_picture_path(@picture) %> |
+  <%= link_to "Destroy", @picture, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", pictures_path %>
+</p>
